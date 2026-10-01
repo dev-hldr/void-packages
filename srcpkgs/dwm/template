@@ -1,10 +1,10 @@
 # Template file for 'dwm'
 pkgname=dwm
 version=6.8
-revision=1
+revision=8
 makedepends="libXinerama-devel libXft-devel freetype-devel"
 short_desc="Dynamic window manager for X"
-maintainer="Orphaned <orphan@voidlinux.org>"
+maintainer="Dev Halder <dev.hldr2010@gmail.com>"
 license="MIT"
 homepage="https://dwm.suckless.org"
 distfiles="https://dl.suckless.org/dwm/dwm-${version}.tar.gz"
