@@ -21,16 +21,21 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5"/*, "6", "7", "8", "9"*/ };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6"/*, "7", "8", "9"*/ };
 
 static const Rule rules[] = {
 	/* xprop(1):
 	*	WM_CLASS(STRING) = instance, class
 	*	WM_NAME(STRING) = title
 	*/
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "kitty",     NULL,       NULL,       0,            0,           -1 },
-	{ "Helium",    NULL,       "Helium",   1 << 1,       0,           -1 },
+	/* class      instance    title         tags mask     isfloating   monitor */
+	{ "kitty",     NULL,       NULL,       	0,            0,           -1 },
+	{ "Helium",    NULL,       "Helium",   	1 << 1,       0,           -1 },
+	{ "python3",   NULL,       "Gajim",    	1 << 1,       0,           -1 },
+	{ "steam",     NULL,       "Steam",   	1 << 1,       0,           -1 },
+	{ "legcord",   NULL,       "Legcord",   1 << 1,       0,           -1 },
+	{ "KeePassXC", NULL,       "KeePassXC", 1 << 1,       0,           -1 },
+	
 };
 
 /* layout(s) */
@@ -62,6 +67,7 @@ static const Layout layouts[] = {
 static const char *roficmd[] = { "rofi", "-show", "drun", "-terminal", "kitty", NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *browsercmd[] = { "helium", NULL };
+static const char *xmppcmd[] = { "gajim", NULL };
 static const char *volumeupcmd[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%+", NULL };
 static const char *volumedowncmd[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%-", NULL };
 static const char *volumemutecmd[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "toggle", NULL };
@@ -75,6 +81,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_d,                    spawn,          {.v = roficmd } },
 	{ MODKEY,                       XK_Return,               spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,                    spawn,          {.v = browsercmd } },
+	{ MODKEY,                       XK_g,                    spawn,          {.v = xmppcmd } },
 	
 	{ MODKEY,                       XK_j,                    focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,                    focusstack,     {.i = -1 } },
@@ -117,8 +124,8 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_3,                    2)
 	TAGKEYS(                        XK_4,                    3)
 	TAGKEYS(                        XK_5,                    4)
-	/*TAGKEYS(                        XK_6,                      5)
-	TAGKEYS(                        XK_7,                      6)
+	TAGKEYS(                        XK_6,                    5)
+	/*TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)*/
 
