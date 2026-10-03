@@ -31,10 +31,10 @@ static const Rule rules[] = {
 	/* class      instance    title         tags mask     isfloating   monitor */
 	{ "kitty",     NULL,       NULL,       	0,            0,           -1 },
 	{ "Helium",    NULL,       "Helium",   	1 << 1,       0,           -1 },
-	{ "python3",   NULL,       "Gajim",    	1 << 1,       0,           -1 },
-	{ "steam",     NULL,       "Steam",   	1 << 1,       0,           -1 },
-	{ "legcord",   NULL,       "Legcord",   1 << 1,       0,           -1 },
-	{ "KeePassXC", NULL,       "KeePassXC", 1 << 1,       0,           -1 },
+	{ "python3",   NULL,       "Gajim",    	1 << 2,       0,           -1 },
+	{ "legcord",   NULL,       "Legcord",   1 << 2,       0,           -1 },
+	{ "steam",     NULL,       "Steam",   	1 << 3,       0,           -1 },
+	{ "KeePassXC", NULL,       "KeePassXC", 1 << 4,       0,           -1 },
 	
 };
 
@@ -67,7 +67,7 @@ static const Layout layouts[] = {
 static const char *roficmd[] = { "rofi", "-show", "drun", "-terminal", "kitty", NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *browsercmd[] = { "helium", NULL };
-static const char *xmppcmd[] = { "gajim", NULL };
+
 static const char *volumeupcmd[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%+", NULL };
 static const char *volumedowncmd[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%-", NULL };
 static const char *volumemutecmd[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "toggle", NULL };
@@ -81,7 +81,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_d,                    spawn,          {.v = roficmd } },
 	{ MODKEY,                       XK_Return,               spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,                    spawn,          {.v = browsercmd } },
-	{ MODKEY,                       XK_g,                    spawn,          {.v = xmppcmd } },
 	
 	{ MODKEY,                       XK_j,                    focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,                    focusstack,     {.i = -1 } },
