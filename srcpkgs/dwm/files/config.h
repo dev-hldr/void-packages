@@ -67,6 +67,7 @@ static const Layout layouts[] = {
 static const char *roficmd[] = { "rofi", "-show", "drun", "-terminal", "kitty", NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *browsercmd[] = { "helium", NULL };
+static const char *xmppcmd[] = { "gajim", NULL };
 
 static const char *volumeupcmd[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%+", NULL };
 static const char *volumedowncmd[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%-", NULL };
@@ -81,6 +82,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_d,                    spawn,          {.v = roficmd } },
 	{ MODKEY,                       XK_Return,               spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,                    spawn,          {.v = browsercmd } },
+	{ MODKEY,                       XK_g,                    spawn,          {.v = xmppcmd } },
 	
 	{ MODKEY,                       XK_j,                    focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,                    focusstack,     {.i = -1 } },
